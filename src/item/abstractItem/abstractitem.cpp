@@ -1,3 +1,5 @@
 #include "abstractitem.h"
 
-AbstractItem::AbstractItem() {}
+AbstractItem::AbstractItem(Item ItemID) : ItemID(ItemID)
+{
+}

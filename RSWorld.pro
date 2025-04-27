@@ -10,14 +10,20 @@ CONFIG += c++17
 
 SOURCES += \
     src/game/character/person/abstractPerson/abstractbody.cpp \
+    src/game/character/person/abstractPerson/abstractbodypart.cpp \
+    src/game/character/person/abstractPerson/abstractperson.cpp \
     src/game/main/main.cpp \
     src/game/ui/mainwindow.cpp \
-    src/item/abstractItem/abstractitem.cpp
+    src/item/abstractItem/abstractitem.cpp \
+    src/item/abstractItem/abstractweapon.cpp
 
 HEADERS += \
     src/game/character/person/abstractPerson/abstractbody.h \
+    src/game/character/person/abstractPerson/abstractbodypart.h \
+    src/game/character/person/abstractPerson/abstractperson.h \
     src/game/ui/mainwindow.h \
-    src/item/abstractItem/abstractitem.h
+    src/item/abstractItem/abstractitem.h \
+    src/item/abstractItem/abstractweapon.h
 
 FORMS += \
     src/game/ui/mainwindow.ui
