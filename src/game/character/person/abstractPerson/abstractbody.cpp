@@ -225,34 +225,42 @@ void AbstractBody::getBodyDamage(BodyPart body, quint16 damage)
     {
         head.getDamage(damage);
     }
+    break;
     case BodyPart::chest:
     {
         chest.getDamage(damage);
     }
+    break;
     case BodyPart::armLeft:
     {
         armLeft.getDamage(damage);
     }
+    break;
     case BodyPart::armRight:
     {
         armRight.getDamage(damage);
     }
+    break;
     case BodyPart::handLeft:
     {
         handLeft.getDamage(damage);
     }
+    break;
     case BodyPart::handRight:
     {
         handRight.getDamage(damage);
     }
+    break;
     case BodyPart::leg:
     {
         leg.getDamage(damage);
     }
+    break;
     case BodyPart::shoes:
     {
         shoes.getDamage(damage);
     }
+    break;
     }
 }
 
@@ -264,34 +272,42 @@ void AbstractBody::getBodyRecover(BodyPart body, quint16 recover)
     {
         head.getDamage(recover);
     }
+    break;
     case BodyPart::chest:
     {
         chest.getDamage(recover);
     }
+    break;
     case BodyPart::armLeft:
     {
         armLeft.getDamage(recover);
     }
+    break;
     case BodyPart::armRight:
     {
         armRight.getDamage(recover);
     }
+    break;
     case BodyPart::handLeft:
     {
         handLeft.getDamage(recover);
     }
+    break;
     case BodyPart::handRight:
     {
         handRight.getDamage(recover);
     }
+    break;
     case BodyPart::leg:
     {
         leg.getDamage(recover);
     }
+    break;
     case BodyPart::shoes:
     {
         shoes.getDamage(recover);
     }
+    break;
     }
 }
 

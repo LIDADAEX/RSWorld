@@ -9,6 +9,7 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    src/game/character/person/abstractAttribute/abstractattribute.cpp \
     src/game/character/person/abstractPerson/abstractbody.cpp \
     src/game/character/person/abstractPerson/abstractbodypart.cpp \
     src/game/character/person/abstractPerson/abstractperson.cpp \
@@ -18,6 +19,7 @@ SOURCES += \
     src/item/abstractItem/abstractweapon.cpp
 
 HEADERS += \
+    src/game/character/person/abstractAttribute/abstractattribute.h \
     src/game/character/person/abstractPerson/abstractbody.h \
     src/game/character/person/abstractPerson/abstractbodypart.h \
     src/game/character/person/abstractPerson/abstractperson.h \
