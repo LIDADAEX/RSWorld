@@ -1,5 +1,4 @@
 #include "abstractweapon.h"
 
-AbstractWeapon::AbstractWeapon(Item ItemID) : AbstractItem(ItemID){
-
-}
+AbstractWeapon::AbstractWeapon(Item itemID, AbstractItemAttribute *itemAttribute) :
+    AbstractItem(itemID, itemAttribute){}

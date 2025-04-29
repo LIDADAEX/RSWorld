@@ -1,10 +1,10 @@
 #include "abstractperson.h"
 
-AbstractPerson::AbstractPerson(QString name, AbstractBody body, AbstractAttribute attribute)
+AbstractPerson::AbstractPerson(QString name, AbstractBody body, AbstractPersonAttribute attribute)
 {
     AbstractPerson::name = new QString(name);
     AbstractPerson::body = new AbstractBody(body);
-    AbstractPerson::attribute = new AbstractAttribute(attribute);
+    AbstractPerson::attribute = new AbstractPersonAttribute(attribute);
 }
 
 AbstractPerson::~AbstractPerson()

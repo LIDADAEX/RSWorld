@@ -1,19 +1,19 @@
-#include "abstractattribute.h"
+#include "AbstractPersonAttribute.h"
 
-AbstractAttribute::AbstractAttribute(quint16 attack, quint16 attackUpLimit, quint16 attackDownLimit,
+AbstractPersonAttribute::AbstractPersonAttribute(quint16 attack, quint16 attackUpLimit, quint16 attackDownLimit,
     quint16 defead, quint16 defeadUpLimit, quint16 defeadDownLimit) :
     attack(attack), attackUpLimit(attackUpLimit), attackDownLimit(attackDownLimit),
     defead(defead), defeadUpLimit(defeadUpLimit), defeadDownLimit(defeadDownLimit){}
 
-quint16 AbstractAttribute::get_Attribute(Attribute attributeName)
+quint16 AbstractPersonAttribute::get_Attribute(person::Attribute attributeName)
 {
     switch(attributeName)
     {
-    case Attribute::attack:
+    case person::Attribute::attack:
     {
         return attack;
     }
-    case Attribute::defead:
+    case person::Attribute::defead:
     {
         return defead;
     }
@@ -22,20 +22,20 @@ quint16 AbstractAttribute::get_Attribute(Attribute attributeName)
     }
 }
 
-quint16 AbstractAttribute::get_Attribute_Limit(Attribute attributeName, AttributeLimit LimitName)
+quint16 AbstractPersonAttribute::get_Attribute_Limit(person::Attribute attributeName, person::AttributeLimit LimitName)
 {
     switch(attributeName)
     {
-    case Attribute::attack:
+    case person::Attribute::attack:
     {
         switch(LimitName)
         {
-        case upLimit:
+        case person::upLimit:
         {
             return attackUpLimit;
         }
         break;
-        case downLimit:
+        case person::downLimit:
         {
             return attackDownLimit;
         }
@@ -45,16 +45,16 @@ quint16 AbstractAttribute::get_Attribute_Limit(Attribute attributeName, Attribut
         }
     }
     break;
-    case Attribute::defead:
+    case person::Attribute::defead:
     {
         switch(LimitName)
         {
-        case upLimit:
+        case person::upLimit:
         {
             return defeadUpLimit;
         }
         break;
-        case downLimit:
+        case person::downLimit:
         {
             return defeadDownLimit;
         }
@@ -69,16 +69,16 @@ quint16 AbstractAttribute::get_Attribute_Limit(Attribute attributeName, Attribut
     }
 }
 
-void AbstractAttribute::set_Attribute(Attribute attributeName, quint16 number)
+void AbstractPersonAttribute::set_Attribute(person::Attribute attributeName, quint16 number)
 {
     switch(attributeName)
     {
-    case Attribute::attack:
+    case person::Attribute::attack:
     {
         attack = number;
     }
     break;
-    case Attribute::defead:
+    case person::Attribute::defead:
     {
         defead = number;
     }
@@ -86,11 +86,11 @@ void AbstractAttribute::set_Attribute(Attribute attributeName, quint16 number)
     }
 }
 
-bool AbstractAttribute::add_Attribute(Attribute attributeName, quint16 addition)
+bool AbstractPersonAttribute::add_Attribute(person::Attribute attributeName, quint16 addition)
 {
     switch(attributeName)
     {
-    case Attribute::attack:
+    case person::Attribute::attack:
     {
         qint32 temp = attack + addition;
         if(temp < attackUpLimit)
@@ -104,7 +104,7 @@ bool AbstractAttribute::add_Attribute(Attribute attributeName, quint16 addition)
             return 0;
         }
     }
-    case Attribute::defead:
+    case person::Attribute::defead:
     {
         qint32 temp = defead + addition;
         if(temp < defeadUpLimit)
@@ -123,11 +123,11 @@ bool AbstractAttribute::add_Attribute(Attribute attributeName, quint16 addition)
     }
 }
 
-bool AbstractAttribute::sub_Attribute(Attribute attributeName, quint16 subtraction)
+bool AbstractPersonAttribute::sub_Attribute(person::Attribute attributeName, quint16 subtraction)
 {
     switch(attributeName)
     {
-    case Attribute::attack:
+    case person::Attribute::attack:
     {
         qint32 temp = attack - subtraction;
         if(temp > attackDownLimit)
@@ -141,7 +141,7 @@ bool AbstractAttribute::sub_Attribute(Attribute attributeName, quint16 subtracti
             return 0;
         }
     }
-    case Attribute::defead:
+    case person::Attribute::defead:
     {
         qint32 temp = defead - subtraction;
         if(temp > defeadDownLimit)
@@ -160,20 +160,20 @@ bool AbstractAttribute::sub_Attribute(Attribute attributeName, quint16 subtracti
     }
 }
 
-void AbstractAttribute::set_Attribute_Limit(Attribute attributeName, AttributeLimit LimitName, quint16 number)
+void AbstractPersonAttribute::set_Attribute_Limit(person::Attribute attributeName, person::AttributeLimit LimitName, quint16 number)
 {
     switch(attributeName)
     {
-    case Attribute::attack:
+    case person::Attribute::attack:
     {
         switch(LimitName)
         {
-        case AttributeLimit::upLimit:
+        case person::AttributeLimit::upLimit:
         {
             attackUpLimit = number;
         }
         break;
-        case AttributeLimit::downLimit:
+        case person::AttributeLimit::downLimit:
         {
             attackDownLimit = number;
         }
@@ -181,16 +181,16 @@ void AbstractAttribute::set_Attribute_Limit(Attribute attributeName, AttributeLi
         }
     }
     break;
-    case Attribute::defead:
+    case person::Attribute::defead:
     {
         switch(LimitName)
         {
-        case AttributeLimit::upLimit:
+        case person::AttributeLimit::upLimit:
         {
             defeadUpLimit = number;
         }
         break;
-        case AttributeLimit::downLimit:
+        case person::AttributeLimit::downLimit:
         {
             defeadDownLimit = number;
         }
@@ -201,15 +201,15 @@ void AbstractAttribute::set_Attribute_Limit(Attribute attributeName, AttributeLi
     }
 }
 
-void AbstractAttribute::add_Attribute_Limit(Attribute attributeName, AttributeLimit LimitName, quint16 addition)
+void AbstractPersonAttribute::add_Attribute_Limit(person::Attribute attributeName, person::AttributeLimit LimitName, quint16 addition)
 {
     switch(attributeName)
     {
-    case Attribute::attack:
+    case person::Attribute::attack:
     {
         switch(LimitName)
         {
-        case AttributeLimit::upLimit:
+        case person::AttributeLimit::upLimit:
         {
             qint32 temp = attackUpLimit + addition;
             if(temp <= 65535)
@@ -218,7 +218,7 @@ void AbstractAttribute::add_Attribute_Limit(Attribute attributeName, AttributeLi
                 attackUpLimit = 65535;
         }
         break;
-        case AttributeLimit::downLimit:
+        case person::AttributeLimit::downLimit:
         {
             qint32 temp = attackDownLimit + addition;
             if(temp <= 65535)
@@ -230,11 +230,11 @@ void AbstractAttribute::add_Attribute_Limit(Attribute attributeName, AttributeLi
         }
     }
     break;
-    case Attribute::defead:
+    case person::Attribute::defead:
     {
         switch(LimitName)
         {
-        case AttributeLimit::upLimit:
+        case person::AttributeLimit::upLimit:
         {
             qint32 temp = defeadDownLimit + addition;
             if(temp <= 65535)
@@ -243,7 +243,7 @@ void AbstractAttribute::add_Attribute_Limit(Attribute attributeName, AttributeLi
                 defeadDownLimit = 65535;
         }
         break;
-        case AttributeLimit::downLimit:
+        case person::AttributeLimit::downLimit:
         {
             qint32 temp = defeadDownLimit + addition;
             if(temp <= 65535)
@@ -258,15 +258,15 @@ void AbstractAttribute::add_Attribute_Limit(Attribute attributeName, AttributeLi
     }
 }
 
-void AbstractAttribute::sub_Attribute_Limit(Attribute attributeName, AttributeLimit LimitName, quint16 subtraction)
+void AbstractPersonAttribute::sub_Attribute_Limit(person::Attribute attributeName, person::AttributeLimit LimitName, quint16 subtraction)
 {
     switch(attributeName)
     {
-    case Attribute::attack:
+    case person::Attribute::attack:
     {
         switch(LimitName)
         {
-        case AttributeLimit::upLimit:
+        case person::AttributeLimit::upLimit:
         {
             qint32 temp = attackUpLimit - subtraction;
             if(temp >= 0)
@@ -275,7 +275,7 @@ void AbstractAttribute::sub_Attribute_Limit(Attribute attributeName, AttributeLi
                 attackUpLimit = 0;
         }
         break;
-        case AttributeLimit::downLimit:
+        case person::AttributeLimit::downLimit:
         {
             qint16 temp = attackDownLimit - subtraction;
             if(temp >= 0)
@@ -287,11 +287,11 @@ void AbstractAttribute::sub_Attribute_Limit(Attribute attributeName, AttributeLi
         }
     }
     break;
-    case Attribute::defead:
+    case person::Attribute::defead:
     {
         switch(LimitName)
         {
-        case AttributeLimit::upLimit:
+        case person::AttributeLimit::upLimit:
         {
             qint32 temp = defeadDownLimit - subtraction;
             if(temp >= 0)
@@ -300,7 +300,7 @@ void AbstractAttribute::sub_Attribute_Limit(Attribute attributeName, AttributeLi
                 defeadDownLimit = 0;
         }
         break;
-        case AttributeLimit::downLimit:
+        case person::AttributeLimit::downLimit:
         {
             qint32 temp = defeadDownLimit - subtraction;
             if(temp >= 0)

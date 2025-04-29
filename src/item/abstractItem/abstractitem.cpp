@@ -1,5 +1,9 @@
 #include "abstractitem.h"
 
-AbstractItem::AbstractItem(Item ItemID) : ItemID(ItemID)
+AbstractItem::AbstractItem(Item itemID, AbstractItemAttribute* itemAttribute) :
+    itemID(itemID), itemAttribute(itemAttribute){}
+
+AbstractItem::~AbstractItem()
 {
+    delete itemAttribute;
 }

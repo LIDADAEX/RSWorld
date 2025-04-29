@@ -6,7 +6,7 @@
 class AbstractWeapon : public AbstractItem
 {
 public:
-    AbstractWeapon(Item ItemID);
+    AbstractWeapon(Item itemID, AbstractItemAttribute* itemAttribute = new AbstractItemAttribute());
 };
 
 #endif // ABSTRACTWEAPON_H
